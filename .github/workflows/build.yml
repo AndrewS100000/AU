@@ -97,7 +97,7 @@ jobs:
         id: "automatic_releases"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}" #this is gonna give me a stroke
-          automatic_release_tag: "latest"
+          automatic_release_tag: ${{ github.sha:0:7 }}
           prerelease: false
           files: |
             Release.zip
